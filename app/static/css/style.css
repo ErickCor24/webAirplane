@@ -1,0 +1,104 @@
+    body {
+    font-family: Verdana, sans-serif;
+    background-color: #e8e8e8;
+    margin: 0;
+    
+    }
+
+    .container {
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .nav {
+        background-color: #10004f;
+        color: white;
+        width: auto;
+        margin: 0 auto;
+        padding:25px 20px 55px 20px;
+        border-width: 1px;
+        /*border-radius: 0px;
+        border-style: solid;*/
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        margin-bottom: 25px;
+    }
+
+    .nav a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .nav a:hover {
+        text-decoration: none;
+    }
+
+    .vista {           
+        background-color: #FBFBFF;
+        border-color: #ffffff;
+    }
+
+    .vista {
+        display: flex;
+        width: 85%;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding:15px 10px 15px 10px;
+        border-width: 5px;
+        border-radius: 5px;
+        border-style: solid;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        margin-bottom: 25px;
+    }
+    .line{
+        display: block;
+    }
+    .left{
+        float: left;   
+        font-size: 25px; font-family: Audiowide, sans-serif;   
+    }
+
+    .right{
+        float: right;       
+    }
+
+    .PanelBotones {
+        display:block ;
+        width: 30%;
+        color: white;
+        background-color: #ffffff;
+        margin: 0 auto;
+        padding:15px 10px 15px 10px;
+        border-width: 5px;
+        border-radius: 5px;
+        border-style: solid;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .boton {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 8px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    footer {
+
+        background-color: #000000;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        margin-top: auto;
+    }
+
+    .PiePagina{
+        display: flex; flex-direction: column;
+    }
