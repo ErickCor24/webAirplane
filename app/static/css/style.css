@@ -132,6 +132,19 @@
         outline: none;
         border: 2px solid #4CAF50;
     }
+
+    select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
+    select:focus {
+        outline: none;
+        border: 2px solid #4CAF50;
+    }
     
     .small-input {
         width: 30%; 
@@ -144,6 +157,7 @@
         text-align: center;
         margin-top: 20px;
     }
+    
     
     
     .btn-register {

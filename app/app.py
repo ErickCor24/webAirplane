@@ -14,6 +14,13 @@ def registro():
 def flight():
     return render_template('crear_vuelo.html')
 
+@app.route('/boleto')
+def boleto():
+    return render_template('Registro_boleto.html')
+
+@app.route("/pago")
+def pago():
+    return render_template('registro_pago.html')
 if __name__ == '__main__':
     app.run(debug=True)
 
