@@ -90,6 +90,71 @@
         display: inline-block;
     }
 
+    /*AQUI PONGO EL FORM CSS */
+    .form-data {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+    
+    .column {
+        flex: 1;
+        margin-right: 10px;
+    }
+    
+    .column:last-child {
+        margin-right: 0;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+    
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+    }
+    
+    .small-input {
+        width: 30%; 
+    }
+
+    .content-button {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    
+    .btn-register {
+        padding: 10px 20px;
+        font-size: 16px; 
+        background-color: #4CAF50; 
+        color: #fff; 
+        border: none; 
+        border-radius: 5px; 
+        cursor: pointer; 
+        transition: background-color 0.3s ease; 
+    }
+    
+    .btn-register:hover {
+        background-color: #57cf5b;
+    }
+    
     footer {
 
         background-color: #000000;
