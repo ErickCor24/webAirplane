@@ -29,39 +29,52 @@
             </section>      
         </div> 
 
-        <div class="vista">
-                <form action="/registrar" method="post">
-                <div class="row"> <div class="col-4"> <h2>Datos personales</h2>
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre" required>
-
-                    <label for="apellido">Apellido:</label>
-                    <input type="text" name="apellido" id="apellido" required>
-
-                    <label for="ci">Cédula de identidad:</label>
-                    <input type="text" name="ci" id="ci" required>
-
-                    <label for="correo">Correo electrónico:</label>
-                    <input type="email" name="correo" id="correo" required>
-
-                    <label for="telefono">Teléfono:</label>
-                    <input type="tel" name="telefono" id="telefono" required>
-
+        <div class="vista form-data">
+            <form action="/registrar" method="post">
+                <div class="form-row">
+                    <div class="column">
+                        <h2>Datos personales</h2>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" id="nombre" required>
+        
+                        <label for="ci">Cédula de identidad:</label>
+                        <input type="text" name="ci" id="ci" required>
+        
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" name="telefono" id="telefono" required>
                     </div>
-                    <div class="col-6"> <h2>Equipaje</h2>
-                    <label for="CantMaletas">Cantidad de Maletas:</label>
-                    <input type="number" name="CantMaletas" id="CantMaletas" required>
-
-                    <label for="Peso">Peso:</label>
-                    <input type="text" name="Peso" id="Peso" required>
+        
+                    <div class="column">
+                        <h2>&nbsp;</h2>
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" name="apellido" id="apellido" required>
+        
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" name="correo" id="correo" required>
                     </div>
                 </div>
-                <div class="row"> <div class="col-12"> <input type="submit" value="Registrar">
+        
+                <div class="form-row">
+                    <div class="column">
+                        <h2>Equipaje</h2>
+                        <label for="CantMaletas">Cantidad de Maletas:</label>
+                        <input type="number" name="CantMaletas" id="CantMaletas" required>
+                    </div>
+        
+                    <div class="column">
+                        <h2>&nbsp;</h2>
+                        <label for="Peso">Peso:</label>
+                        <input type="number" name="Peso" id="Peso" placeholder="Libras" required>
                     </div>
                 </div>
-                </form>
-            </div>
-    </div>    
+        
+                <div class="content-button">
+                    <input type="submit" class="btn-register" value="Registrar">
+                </div>
+            </form>
+        </div>
+        
+
     
         <footer>
             <div class="PiePagina">
