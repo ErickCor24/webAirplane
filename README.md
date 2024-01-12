@@ -7,6 +7,3 @@ Crear su entorno virtual para poder añadir las dependencias o librerias utiliza
 5. Ejecutamos el comando "pip install -r ".\requirements.txt"
 NOTA: Para usar el CX_oracle deben tener instalado la ultima version de C++ de VIsual Studio
 6. Para iniciar el localhost usaremos el comando python .\app\app.py
-
-https://youtu.be/SXVdnEGetPI?t=272 INSTALAR LAS LIBRERIAS DESDE EL REQUIREMENTS.txt 
-https://www.youtube.com/watch?v=TNtrAvNNxTY&t=2s ENTORNOS VIRTUALES

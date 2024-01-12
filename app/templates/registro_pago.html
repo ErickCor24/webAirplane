@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> AIRLINE SECUS </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"> 
+
+</head>
+<body>
+    <div class="container">
+        <header class="nav">
+            <div class="line">
+                <section class="left" >
+                    <a href="/">ARILINE SECUS</a>  
+                </section>    
+                <section class="right">
+                    <a href="#">Iniciar Sesion</a>
+                </section>
+                        
+            </div>      
+        </header> 
+        <div class="PanelBotones">
+            <section>
+                <button class="boton"> Cliente </button>     
+                <button class="boton"> Vuelo </button>
+                <button class="boton"> Boleto </button>
+            </section>      
+        </div> 
+
+
+        <div class = "vista">
+            <div>
+                <form action="" class="form-data">
+                    <h1>Metodo de pago</h1>
+                    <div class="form-row">
+                        <div class="column">
+                            <label for="fechaSalida">CI cliente</label>
+                            <input type="number" id="cicliente" required="true">
+                        </div>
+                        <div class="column">
+                            <label for="horaLlegada">valor</label>
+                            <input type="number" id="valor" required="true">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="column">
+                            <label for="metodoPago">Metodo de pago</label>
+                            <select id="metodoPago" class="small-input" required="true">
+                                <option value="">Seleccione un método de pago</option>
+                                <option value="tarjetaCredito">Tarjeta de Crédito</option>
+                                <option value="tarjetaDebito">Tarjeta de Débito</option>
+                                <option value="paypal">PayPal</option>
+                                <option value="transferenciaBancaria">Transferencia Bancaria</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="content-button">
+                    <button class="btn-register">continuar</button>
+                </div>
+            </div>
+        </div>
+    </div>    
+    
+        <footer>
+            <div class="PiePagina">
+                <p>&copy; 2022 - Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    
+</body>
+</html>
