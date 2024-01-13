@@ -10,6 +10,10 @@ def index():
 def registro():
     return render_template('Registro_boleto.html')
 
+@app.route('/vuelo')
+def vuelo():
+    return render_template('crear_vuelo.html')
+
 
 @app.route('/flight')
 def flight():
@@ -23,6 +27,7 @@ def boleto():
 def pago():
     return render_template('registro_pago.html')
 
+
 @app.route('/cliente')
 def cliente():
     return render_template('registro_cliente.html')
@@ -30,6 +35,7 @@ def cliente():
 @app.route('/flight_selection')
 def flightSelection():
     return render_template('flight_selection.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
