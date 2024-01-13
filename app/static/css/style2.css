@@ -7,6 +7,7 @@ body {
     .container {
         flex-direction: column;
         min-height: 100vh;
+
     }
     .nav {
         background-color: #10004f;
@@ -19,6 +20,7 @@ body {
         border-style: solid;*/
         box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
         margin-bottom: 25px;
+
     }
 
     .nav a {
@@ -112,6 +114,8 @@ body {
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         margin-bottom: 20px;  
+
+
     }
 
     .form-row2{
@@ -132,12 +136,27 @@ body {
         padding: 10px;      
     }
 
-    .top_idvuelo label{
-        display: inline;
-        width: auto;
+    .top_id_vuelo{
+        display: block;
+        width: 68px;
+        margin: 0 auto;
         padding: 8px;
-        margin: 20px;
+    }
 
+    .diventradatexto{
+        display: block;
+        width: auto;
+        padding: 0px 10px 10px 10px;
+    }
+
+    .entradatexto{
+        display: block;
+        box-sizing: border-box;
+        border-radius: 5px;
+        padding: 7px 9px;
+        border: 2px solid #ccc;
+        margin: 0 auto;
+        border: 3px initial transparent;
     }
 
     .botonbuscar {
@@ -184,14 +203,7 @@ body {
         background-color: #ffffff;
     }
 
-    .entradatexto{
-        width: 100%;
-        padding: 8px;
-        margin: 10px;
-        box-sizing: border-box;
-        border-radius: 5px;
-        border: 2px solid #ccc;
-    }
+
 
     .entradatexto2{
         display: inline;
@@ -218,7 +230,7 @@ body {
     }
 
     .labelClase{
-        display: inline-block;
+        display: block;
         padding: 10px;
     }
 
