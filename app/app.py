@@ -27,6 +27,10 @@ def pago():
 def cliente():
     return render_template('registro_cliente.html')
 
+@app.route('/flight_selection')
+def flightSelection():
+    return render_template('flight_selection.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
 
