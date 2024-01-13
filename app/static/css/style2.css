@@ -1,9 +1,9 @@
-    body {
+body {
     font-family: Verdana, sans-serif;
     background-color: #e8e8e8;
     margin: 0;
-    
     }
+
     .container {
         flex-direction: column;
         min-height: 100vh;
@@ -34,6 +34,8 @@
         background-color: #FBFBFF;
         border-color: #ffffff;
     }
+
+
 
     .vista {
         display: flex;
@@ -89,98 +91,6 @@
         display: inline-block;
     }
 
-    /*AQUI PONGO EL FORM CSS */
-    .form-data {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .form-row{
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 16px;
-    }
-    .column {
-        flex: 1;
-        margin-right: 10px;
-    }
-    
-    .column:last-child {
-        margin-right: 0;
-    }
-   
-    label {
-        display: block;
-        margin-bottom: 8px;
-    }
-    
-    input {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 16px;
-        box-sizing: border-box;
-        border-radius: 5px;
-        border: 2px solid #ccc;
-    }
-    
-    label{
-        font-weight: bold;
-        color: #10004f;
-        
-    }
-    
-    input:focus {
-        outline: none;
-        border: 2px solid #4CAF50;
-    }
-
-    select {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 16px;
-        box-sizing: border-box;
-        border-radius: 5px;
-        border: 2px solid #ccc;
-    }
-
-
-    select:focus {
-        outline: none;
-        border: 2px solid #4CAF50;
-    }
-    
-    .small-input {
-        width: 30%; 
-    }
-
-    .content-button {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        margin-top: 20px;
-    }
-    
-    
-    
-    .btn-register {
-        padding: 10px 20px;
-        font-size: 16px; 
-        background-color: #4CAF50; 
-        color: #fff; 
-        border: none; 
-        border-radius: 5px; 
-        cursor: pointer; 
-        transition: background-color 0.3s ease; 
-    }
-    
-    .btn-register:hover {
-        background-color: #57cf5b;
-    }
-    
     footer {
 
         background-color: #000000;
@@ -194,26 +104,135 @@
         display: flex; flex-direction: column;
     }
 
-    .form-data {
+    .form-data2 {
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
         border: 1px solid #ccc;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;  
     }
-    
-    .form-row {
+
+    .form-row2{
+        display: inline;
+        margin: 0 auto; 
+        justify-content: center;    
+        
+    }
+
+    div .form-row2 {
+        display: inline;
+    }
+
+    .top_idvuelo{
+        display: block;
+        width: 50%;      
+        margin: 0 auto;   
+        padding: 10px;      
+    }
+
+    .top_idvuelo label{
+        display: inline;
+        width: auto;
+        padding: 8px;
+        margin: 20px;
+
+    }
+
+    .botonbuscar {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 8px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 0 auto;
+        cursor: pointer;
+        border-radius: 5px;
         display: flex;
-        justify-content: space-between;
-        margin-bottom: 16px;
+        border: 25px;
+    }
+
+    .table_vuelo {    
+        margin: 0 auto;
+        width: 75%;
+        border-collapse:  collapse;
+        padding: 30px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     }
     
-    .column {
-        flex: 1;
-        margin-right: 10px;
+    
+    .table_vuelo td {
+        padding: 5px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+      
+    .table_vuelo th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #19007b;
+        color: rgb(0, 0, 0);
+        color: #ffffff;
     }
     
-    .column:last-child {
-        margin-right: 0;
+    .table_vuelo tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+
+    .entradatexto{
+        width: 100%;
+        padding: 8px;
+        margin: 10px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
+
+    .entradatexto2{
+        display: inline;
+        width: 50%;
+        padding: 8px;
+        margin: 10px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+    }
+
+    .small-input {
+        font-size: 14px;
+        padding: 10px;
+        width: 100%;
+        background-color: transparent;
+        outline: none;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    
+    .small-input:focus {
+        border-bottom: 2px solid #19007b;
+    }
+
+    .labelClase{
+        display: inline-block;
+        padding: 10px;
+    }
+
+    .botonregister {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 8px 19px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 8px;
+        cursor: pointer;
+        border-radius: 5px;
+        display: inline-block;
     }
