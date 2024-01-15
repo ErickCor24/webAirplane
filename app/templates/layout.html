@@ -6,6 +6,8 @@
     <title> AIRLINE SECUS </title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide"> 
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style2.css')}}"> 
+
 
 </head>
 <body>
@@ -23,8 +25,8 @@
         </header> 
         <div class="PanelBotones">
             <section>
-                <button class="boton"> Cliente </button>     
-                <button class="boton"> Vuelo </button>
+                <a class="boton" href="/cliente"> Cliente </button>     
+                <a class="boton" href="/vuelo"> Vuelo </button>
                 <a class="boton" href="/registro">Boleto</a>
             </section>      
         </div> 
@@ -32,6 +34,8 @@
 
         <div class = "vista">
             <div>
+                {% block content %}
+                {% endblock %}
             </div>
         </div>
     </div>    

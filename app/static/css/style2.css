@@ -131,22 +131,22 @@ body {
 
     .top_idvuelo{
         display: block;
-        width: 50%;      
-        margin: 0 auto;   
-        padding: 10px;      
+        width: auto;      
+        /*margin: 0 auto;   */
+        /*padding: 10px;      */
     }
 
     .top_id_vuelo{
         display: block;
-        width: 68px;
+        width: auto;
         margin: 0 auto;
-        padding: 8px;
+        padding: 8px 8px 8px 8px;
     }
 
     .diventradatexto{
         display: block;
         width: auto;
-        padding: 0px 10px 10px 10px;
+        /*adding: 0px 10px 10px 10px;*/
     }
 
     .entradatexto{
@@ -155,7 +155,7 @@ body {
         border-radius: 5px;
         padding: 7px 9px;
         border: 2px solid #ccc;
-        margin: 0 auto;
+        /*margin: 0 auto;*/
         border: 3px initial transparent;
     }
 
@@ -202,8 +202,6 @@ body {
     .table_vuelo tr:nth-child(even) {
         background-color: #ffffff;
     }
-
-
 
     .entradatexto2{
         display: inline;
