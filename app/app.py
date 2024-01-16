@@ -1,8 +1,11 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for, request, flash
 from connection import dbConnect
 
 app = Flask (__name__)
 
+rtnPasajero = None
+vueloId = None
+#app.secret_key = 'mysecretkey'
 
 #Pagina de inicio Home
 @app.route('/')
@@ -23,14 +26,24 @@ def registroVuelo():
         avionAsignado = request.form ['avionAsignado']
         aeropuertoDestino = request.form ['aeropuertoDestino']
 
-        datos = {'fechaS':fechaSalida , 'horaS':horaSalida, 'precio': precio, 'avionA':avionAsignado, 'aeroP': aeropuertoDestino}
-        print(datos)
+        
         
         conexion = dbConnect()
         cursor = conexion.cursor()
+        idVariable = cursor.var(int)
+        datos = {'fechaS':fechaSalida , 'horaS':horaSalida, 'precio': precio, 'avionA':avionAsignado, 'aeroP': aeropuertoDestino, 'idVariable':idVariable}
+        print(datos)
 
+        
         cursor.execute ("INSERT INTO TB_VUELO (FECHASALIDA, HORASALIDA, PRECIO, ESTADO, IDAVION, IDAEROPUERTO) \
-                        VALUES (TO_DATE(:fechaS,'YYYY-MM-DD'), :horaS, :precio, 1 ,:avionA, :aeroP)",datos)
+                        VALUES (TO_DATE(:fechaS,'YYYY-MM-DD'), :horaS, :precio, 1 ,:avionA, :aeroP) RETURNING IDVUELO INTO :idVariable",datos)       
+        
+
+        id_generado = idVariable.getvalue()
+
+        print("----------")
+        print (id_generado)
+        
         conexion.commit()
         cursor.close() 
         conexion.close()       
@@ -80,21 +93,71 @@ def registro():
         correo = request.form['correo']
         CantMaletas = request.form['CantMaletas']
         peso = request.form['Peso']
-        print (peso)
+        global rtnPasajero
+
+        conexion = dbConnect()
+        
+        cursor = conexion.cursor()
+        idVariable = cursor.var(int)
+
+        datosEquipaje ={'cantMaletas':CantMaletas,'peso':peso, 'idVariable':idVariable}
+
+        cursor.execute ("INSERT INTO TB_EQUIPAJE(CANTIDADMALETAS, PESO) \
+                        VALUES (:cantMaletas,:peso) RETURNING IDEQUIPAJE INTO :idVariable",datosEquipaje)
+        id_generado = str(idVariable.getvalue()[0])
+        print(type(id_generado))
+        conexion.commit()
+        conexion.close()
+        
+        conexion2 = dbConnect()
+        cursor2 = conexion2.cursor()
+        returnPasajero = cursor2.var(int)
+        datosPasajero ={'nombre':nombre, 'apellido':apellido, 'ci':ci,'telefono':telefono,'correo':correo,'idEquipaje':id_generado,'returnPasajero':returnPasajero }
+        print(datosPasajero)
+        cursor2.execute ("INSERT INTO TB_PASAJERO (CIPASAJERO, NOMBRE, APELLIDO, TELEFONO, CORREO, ESTADO, IDEQUIPAJE) \
+                        VALUES (:ci, :nombre, :apellido, :telefono, :correo, '1', :idEquipaje) RETURNING IDPASAJERO INTO :returnPasajero", datosPasajero)
+        returnPasajero = str(returnPasajero.getvalue()[0])  
+        rtnPasajero = returnPasajero
+        conexion2.commit()
+        cursor2.close()
+        conexion2.close()
         return redirect(url_for('seleccion'))
 
 
 #Funciones de regitsrar el boleto seleccionando el Vuelo registrado y clase 
 @app.route ('/seleccion_vuelo')
 def seleccion():
-    return render_template('flight_selection.html')   
+    conexion=dbConnect()
+    cursor = conexion.cursor()
+    cursor.execute("SELECT * FROM TB_VUELO ")
+    dataVuelo = cursor.fetchall()
+    print(dataVuelo)
+    cursor.close()
+    
+    cursor2 = conexion.cursor()
+    cursor2.execute("SELECT * FROM TB_AEROPUERTO ")
+    dataDestino = cursor2.fetchall()
+
+    return render_template('flight_selection.html', data=dataVuelo, data2=dataDestino)   
 
 @app.route('/flight_selection',methods = ['GET','POST'])
 def flightSelection():
     if request.method == 'POST':
         idVuelo = request.form ['idVuelo']
-        clase = request.form ['clase']   
-        print (idVuelo, clase)
+        clase = request.form ['clase']          
+        global vueloId
+        vueloId = idVuelo
+        global rtnPasajero
+        idPasajero = str(rtnPasajero)
+        
+        datos = {'idVuelo':idVuelo , 'clase':clase , 'idPasajero':idPasajero}
+        conexion = dbConnect()
+        cursor = conexion.cursor()
+        cursor.execute("INSERT INTO TB_BOLETO (CLASE, IDVUELO, ESTADO, IDPASAJERO)\
+                       VALUES (:clase, :idVuelo, 1, :idPasajero)",datos)
+        conexion.commit()
+        cursor.close()
+        conexion.close()
         return redirect(url_for('pago'))
     
 
@@ -109,12 +172,28 @@ def registroPago():
         ciCliente = request.form ['cicliente']
         valor = request.form ['valor']
         metodoPago = request.form ['metodoPago']
-        print (ciCliente, metodoPago, valor)
+        global vueloId
+        idVuelo = vueloId
+        idFormaPago = None
+        if metodoPago == 'tarjetaCredito':
+            idFormaPago = 'FP01'
+        elif metodoPago == 'tarjetaDebito':
+            idFormaPago = 'FP02'
+        elif metodoPago == 'paypal':
+            idFormaPago = 'FP03'
+        else :
+            idFormaPago = 'FP04'
+
+        datos = {'ciCliente':ciCliente , 'valor' :valor, 'idFormaPago' :idFormaPago , 'idVuelo':idVuelo}
+        conexion = dbConnect()
+        cursor = conexion.cursor()
+        cursor.execute("INSERT INTO TB_FACTURA(IDCICLIENTE, IDVUELO, VALORTOTAL, IDFORMAPAGO, ESTADO)\
+                       VALUES (:ciCliente, :idVuelo, :valor, :idFormaPago, 1)",datos)
+        conexion.commit()
+        cursor.close()
+        conexion.close()
 
         return redirect(url_for('index'))
-
-
-
 
 
 if __name__ == '__main__':
