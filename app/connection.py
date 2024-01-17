@@ -13,5 +13,4 @@ def dbConnect():
 
     else:
         print("Conectado a la DB", connect.version)
-
     #connection.close()
