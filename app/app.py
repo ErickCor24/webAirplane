@@ -196,6 +196,11 @@ def registroPago():
         return redirect(url_for('index'))
 
 
+@app.route("/factura")
+def factura():
+    return render_template('factura_selection.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 
