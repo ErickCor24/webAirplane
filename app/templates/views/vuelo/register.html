@@ -1,0 +1,47 @@
+{% extends 'layout.html' %} 
+{% block content %}
+
+<form action="/registro_vuelo" class="form-data" method="POST">
+  <h1>Creación de vuelos</h1>
+  <div class="form-row">
+    <div class="column">
+      <label for="fechaSalida">Fecha Salida</label>
+      <input type="date" name="fechaSalida" required="true" />
+    </div>
+    <div class="column">
+      <label for="horaLlegada">Hora Salida</label>
+      <input type="time" name="horaSalida" required="true" />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="column">
+      <label for="precio">Precio</label>
+      <input type="text" name="precio" class="small-input" required="true" />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="column">
+      <label for="avionAsignado">Avión asignado</label>
+      <select name="avionAsignado" id="avionAsignado">
+        <option value="">seleccione una opcion</option>
+        {% for avion in aviones %}
+        <option value="{{avion.id}}">{{avion.marca}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="column">
+      <label for="aeropuertoDestino">Aeropuerto Destino</label>
+      <select name="aeropuertoDestino" id="aeropuertoDestino">
+        <option value="">seleccione una opcion</option>
+        {% for aeropuerto in aeropuertos %}
+        <option value="{{aeropuerto.id}}">{{aeropuerto.nombre}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="content-button">
+    <a href="{{url_for('boleto.register')}}">siguiente</a>
+  </div>
+</form>
+
+{% endblock %}
