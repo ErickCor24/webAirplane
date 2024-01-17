@@ -1,12 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    registro cliente
-    
-</body>
-</html>
+{%extends 'layout.html'%}
+{% block content %}
+
+<div class="vista form-data">
+    <form action="/registro_cliente" method="POST">
+      <div class="form-row">
+        <div class="column">
+          <h2>Registro Clientes</h2>
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" id="nombre" required />
+  
+          <label for="ci">CI:</label>
+          <input type="text" name="ci" id="ci" required />
+  
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" name="telefono" id="telefono" required />
+        </div>
+  
+        <div class="column">
+          <h2>&nbsp;</h2>
+          <label for="apellido">Apellido:</label>
+          <input type="text" name="apellido" id="apellido" required />
+  
+          <label for="correo">Correo electrónico:</label>
+          <input type="email" name="correo" id="correo" required />
+        </div>
+      </div>
+      <div class="content-button">
+        <button class="btn-register" type="submit">Registrar</button>
+      </div>
+    </form>
+  </div>
+{%endblock%}  
