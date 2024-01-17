@@ -200,6 +200,10 @@ def registroPago():
 def factura():
     return render_template('factura_selection.html')
 
+@app.route("/consultarvuelo")
+def consultarvuelo():
+    return render_template('consultar_vuelo.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
