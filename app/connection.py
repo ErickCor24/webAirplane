@@ -3,8 +3,8 @@ import cx_Oracle
 def dbConnect():
     try:
         connect = cx_Oracle.connect(
-        user = 'JOHAN123',
-        password = 'david123',
+        user = 'UsuarioProyecto',
+        password = '1234',
         dsn = 'localhost/xe')
         return connect
     
