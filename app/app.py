@@ -25,31 +25,20 @@ def registroVuelo():
         precio = request.form ['precio']
         avionAsignado = request.form ['avionAsignado']
         aeropuertoDestino = request.form ['aeropuertoDestino']
-
-        
-        
         conexion = dbConnect()
         cursor = conexion.cursor()
         idVariable = cursor.var(int)
         datos = {'fechaS':fechaSalida , 'horaS':horaSalida, 'precio': precio, 'avionA':avionAsignado, 'aeroP': aeropuertoDestino, 'idVariable':idVariable}
         print(datos)
-
-        
         cursor.execute ("INSERT INTO TB_VUELO (FECHASALIDA, HORASALIDA, PRECIO, ESTADO, IDAVION, IDAEROPUERTO) \
                         VALUES (TO_DATE(:fechaS,'YYYY-MM-DD'), :horaS, :precio, 1 ,:avionA, :aeroP) RETURNING IDVUELO INTO :idVariable",datos)       
-        
-
         id_generado = idVariable.getvalue()
-
         print("----------")
         print (id_generado)
-        
         conexion.commit()
         cursor.close() 
         conexion.close()       
         return redirect(url_for('index'))
-
-
 #Funciones para registrar el cliente
 @app.route('/cliente')
 def cliente():
