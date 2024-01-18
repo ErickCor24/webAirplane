@@ -1,0 +1,36 @@
+{% extends 'layout.html' %} 
+{% block content %}
+    <div>
+        <h1>Administrar Vuelos</h1>
+        <table  class="table_vuelo">
+        <thead>
+            <tr>
+                <th>Id vuelo</th>
+                <th>Fecha Salida</th>
+                <th>Hora Salida</th>
+                <th>Precio</th>
+                <th>Aeropuerto Destino</th>
+                <th>Avion</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for data in dataVuelo%}
+            {%if data.4 == '1'%}     
+            <tr>
+                <td>{{data.0}}</td>
+                <td>{{data.1.strftime("%Y-%m-%d")}}</td>
+                <td>{{data.2}}</td>
+                <td>{{data.3}}</td>
+                <td>{{data.11}}</td>
+                <td>{{data.6}}</td>
+                <td><a class="editar" href="/flight/editarVuelo/{{data.0}}">Editar</a></td>
+                <td><a class="borrar" href="/flight/eliminarVuelo/{{data.0}}">Eliminar</a></td>
+            {% endif %}
+            {%endfor%}
+            </tr>  
+        </tbody>
+        </table>
+    </div>
+{% endblock %}

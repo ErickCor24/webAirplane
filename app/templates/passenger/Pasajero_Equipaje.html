@@ -1,0 +1,40 @@
+{% extends 'layout.html' %} 
+{% block content %}
+
+<div class="vista form-data">
+  <form action="/Pasajero_Equipaje" method="POST">
+    <div class="form-row">
+      <div class="column">
+        <h2>Datos personales</h2>
+        <table border="1" class="table_vuelo">
+          <thead>
+            <tr>
+              <th>CI</th>
+              <th>Apellido</th>
+              <th>Nombre</th>
+              <th>Id Vuelo</th>
+              <th>Qty Maletas</th>
+              <th>Peso Equipaje</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <a href="/editPasajero">Editar</a>
+                <a href="/deletePasajero">Elimimar</a>
+              </td>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
+

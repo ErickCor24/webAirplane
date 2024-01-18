@@ -1,0 +1,46 @@
+{% extends 'layout.html' %} 
+{% block content %}
+    <div>
+        <h1> Administrar cliente </h1>
+      <table border="1" class="table_vuelo">
+        <thead>
+          <tr>
+            <th>Ci</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>         
+            {%for cliente in dataCliente%}
+            {%if cliente.5 == '1'%}                      
+            <tr>
+              <td>{{cliente.0}}</td>
+              <td>{{cliente.1}}</td>
+              <td>{{cliente.2}}</td>
+              <td>{{cliente.3}}
+              </td><td>{{cliente.4}}
+              </td>
+              <td>
+              <div class="row-button">
+                <a class="editar" href="/client/editCliente/{{cliente.0}}" >Editar</a>    
+              </div>        
+              </td>
+              <td>
+                <div class="row-button">
+                  <a class="borrar" href="/client/deleteClient/{{cliente.0}}" >Eliminar</a>
+                </div>        
+                
+              </td>
+            </tr>
+            {% endif %}
+            {%endfor%}
+         
+        </tbody>
+        
+      </table>
+    </div>
+{% endblock %}

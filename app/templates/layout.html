@@ -25,9 +25,9 @@
         </header> 
         <div class="PanelBotones">
             <section>
-                <a class="boton" href="/cliente"> Cliente </button>     
-                <a class="boton" href="/vuelo"> Vuelo </button>
-                <a class="boton" href="/registro">Boleto</a>
+                <a class="boton" href="/client/cliente"> Cliente </button>     
+                <a class="boton" href="/flight/vuelo"> Vuelo </button>
+                <a class="boton" href="/ticket_passenger/registro">Boleto</a>
             </section>      
         </div> 
 
@@ -35,9 +35,12 @@
         <div class = "vista">
             <div>
                 {% block content %}
+                
                 {% endblock %}
             </div>
+            
         </div>
+        <a class="boton" href="/administration">Administrar</a>
     </div>    
     
         <footer>

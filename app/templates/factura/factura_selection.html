@@ -1,0 +1,41 @@
+{% extends 'layout.html' %} 
+{% block content %}
+<div>
+      <h1>Administrar Factura</h1>
+    <table border="1" class="table_vuelo">
+      <thead>
+        <tr>
+          <th>IdFactura</th>
+          <th>CI cliente</th>
+          <th>Cliente</th>
+          <th>ID Vuelo</th>
+          <th>V. Total</th>
+          <th>F. Pago</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for info in dataFactura%}
+          <tr>
+            <td>{{info.0}}</td>
+            <td>{{info.1}}</td>
+            <td>{{info.16}} {{info.17}}</td>
+            <td>{{info.2}}</td>
+            <td>{{info.3}}</td>    
+            <td>{{info.14}}</td>
+            <td>             
+              <div class="row-button">
+                  <div class="column-button">
+                      <a href="/factura/eliminar_factura/{{info.0}}" class="borrar">Borrar</a>
+                    </div>
+              </div>
+          </td>
+
+          </tr>  
+        {%endfor%}  
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{% endblock %}
