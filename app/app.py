@@ -1,7 +1,10 @@
 from flask import Flask, render_template, redirect, url_for, request, flash
 from connection import dbConnect
+from client import client_page
 
 app = Flask (__name__)
+
+app.register_blueprint(client_page)
 
 rtnPasajero = None
 vueloId = None
@@ -15,7 +18,7 @@ def index():
 #Funciones de Registrar Vuelo
 @app.route('/vuelo')
 def vuelo():
-    return render_template('crear_vuelo.html')
+    return render_template('vuelo/crear_vuelo.html')
 
 @app.route('/registro_vuelo', methods = ['GET','POST'])
 def registroVuelo():
@@ -51,9 +54,9 @@ def registroVuelo():
 
 
 #Funciones para registrar el cliente
-@app.route('/cliente')
+'''@app.route('/cliente')
 def cliente():
-    return render_template('registro_cliente.html')
+    return render_template('cliente/registro_cliente.html')
 
 @app.route('/registro_cliente', methods = ['GET','POST'])
 def registroCliente():
@@ -69,19 +72,19 @@ def registroCliente():
         conexion = dbConnect()
         cursor = conexion.cursor()
 
-        cursor.execute ("INSERT INTO TB_CLIENTE (IDCICLIENTE, NOMBRE, APELLIDO, CORREO, TELEFONO) \
-                        VALUES (:ci,:nombre,:apellido,:correo,:telefono )",datos)
+        cursor.execute ("INSERT INTO TB_CLIENTE (IDCICLIENTE, NOMBRE, APELLIDO, CORREO, TELEFONO, ESTADO) \
+                        VALUES (:ci,:nombre,:apellido,:correo,:telefono, '1' )",datos)
         conexion.commit()
         cursor.close() 
         conexion.close()     
 
-        return redirect(url_for('index'))
+        return redirect(url_for('index'))'''
 
 
 #Registro del Pasajero para ingresar a la seccion de Vuelo
 @app.route('/registro')
 def boleto():
-    return render_template('Registro_boleto.html')
+    return render_template('passenger/Registro_boleto.html')
 
 @app.route('/registro_pasajero', methods = ['GET','POST'])
 def registro():
@@ -138,7 +141,7 @@ def seleccion():
     cursor2.execute("SELECT * FROM TB_AEROPUERTO ")
     dataDestino = cursor2.fetchall()
 
-    return render_template('flight_selection.html', data=dataVuelo, data2=dataDestino)   
+    return render_template('ticket/flight_selection.html', data=dataVuelo, data2=dataDestino)   
 
 @app.route('/flight_selection',methods = ['GET','POST'])
 def flightSelection():
@@ -164,7 +167,7 @@ def flightSelection():
 #Se registra el tipo de pago y el valor a pagar
 @app.route("/pago")
 def pago():
-    return render_template('registro_pago.html')
+    return render_template('factura/registro_pago.html')
 
 @app.route("/registro_pago", methods = ['GET','POST'])
 def registroPago():
@@ -196,11 +199,11 @@ def registroPago():
         return redirect(url_for('index'))
 
 
-@app.route("/factura")
+'''@app.route("/factura")
 def factura():
-    return render_template('factura_selection.html')
+    return render_template('factura_selection.html')'''
+
 
 
 if __name__ == '__main__':
     app.run(debug=True)
-

@@ -1,0 +1,39 @@
+{% extends 'layout.html' %} 
+{% block content %}
+
+<div class="vista form-data">
+    {% for info in data %}
+    <form action="/update_client/{{info.0}}" method="POST">
+      <div class="form-row">
+        <div class="column">
+          <h2>Registro Clientes</h2>
+          
+
+          <label for="ci">CI:</label>
+          <input type="text" name="ci" value ="{{info.0}}" readonly />  
+
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" value ="{{info.1}}" required />
+  
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" name="telefono" value ="{{info.4}}" required />
+        </div>
+  
+        <div class="column">
+          <h2>&nbsp;</h2>
+          <label for="apellido">Apellido:</label>
+          <input type="text" name="apellido" value ="{{info.2}}" required />
+  
+          <label for="correo">Correo electrónico:</label>
+          <input type="email" name="correo" value ="{{info.3}}" required />
+          
+        </div>
+      </div>
+      <div class="content-button">
+        <button class="btn-register" type="submit">Registrar</button>
+      </div>
+    </form>
+    {%endfor%}
+  </div>
+
+{% endblock %}
