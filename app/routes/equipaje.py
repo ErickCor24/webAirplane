@@ -5,9 +5,8 @@ from models.equipaje import Equipaje
 
 equipaje = Blueprint('equipaje', __name__, template_folder='templates',url_prefix='/equipaje')
 
-@equipaje.route('/register',methods=['GET','POST'])
-def registroEquipaje():
-
+@equipaje.route('/register',methods=['GET'])
+def create():
     return render_template('views/equipaje/registro.html')
 
 @equipaje.route('/', methods=['GET','POST'])

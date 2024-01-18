@@ -11,3 +11,12 @@ class Pasajero(db.Model):
     estado = db.Column(db.Boolean, nullable=False)
     equipaje_id = db.Column(db.Integer, db.ForeignKey('equipaje.id'), nullable=False)
 
+    def __init__(self,ci,nombre,apellido,telefono,correo,equipaje_id):
+        self.ci = ci
+        self.nombre = nombre
+        self.apellido = apellido
+        self.telefono = telefono
+        self.correo = correo
+        self.estado = True
+        self.equipaje_id = equipaje_id
+

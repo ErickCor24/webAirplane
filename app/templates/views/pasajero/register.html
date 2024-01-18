@@ -2,7 +2,7 @@
 
 {%block content%}
 <div class="vista form-data">
-    <form action="" method="POST">
+    <form action="{{url_for('pasajero.store')}}" method="post">
       <div class="form-row">
         <div class="column">
           <h2>Registro pasajero</h2>
@@ -11,22 +11,25 @@
   
           <label for="ci">nombre</label>
           <input type="text" name="nombre" id="nombre" required />
+
+          <label for="apellido">Apellido:</label>
+          <input type="text" name="apellido" id="apellido" required />
   
-          <label for="telefono">Teléfono:</label>
-          <input type="tel" name="telefono" id="telefono" required />
         </div>
   
         <div class="column">
           <h2>&nbsp;</h2>
-          <label for="apellido">Apellido:</label>
-          <input type="text" name="apellido" id="apellido" required />
+
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" name="telefono" id="telefono" required />
+         
   
           <label for="correo">Correo electrónico:</label>
           <input type="email" name="correo" id="correo" required />
         </div>
       </div>
       <div class="content-button">
-        <a href="{{url_for('vuelo.register')}}">siguiente</a>
+        <button  class="boton" type="submit">siguiente</button>
       </div>
     </form>
   </div>

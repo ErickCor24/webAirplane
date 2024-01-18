@@ -14,6 +14,11 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
 
+@app.route('/')
+def index():
+    return render_template('home.html')
+
+
 
 app.register_blueprint(cliente)
 app.register_blueprint(equipaje)

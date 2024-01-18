@@ -1,7 +1,7 @@
 {%extends 'layout.html'%}
 {% block content %}
 <div class="vista form-data">
-    <form action="{{url_for('equipaje.register')}}">
+    <form action="{{url_for('equipaje.register')}}" method="post">
         <div class="column">
             <h2>Registro Equipaje</h2>
             <label for="nombre">peso total</label>
@@ -11,8 +11,9 @@
             <input type="number" name="cantidad" id="cantidad" required />
         </div>
         <div class="content-button">
-            <a href="{{url_for('equipaje.register')}}">siguiente</a>
+            </button><a href="{{url_for('equipaje.register')}}">siguiente</a>
         </div>
+        <button class="boton" type="submit">enviar</button>
     </form>
 
 </div>

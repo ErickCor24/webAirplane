@@ -10,10 +10,26 @@ pasajero = Blueprint('pasajero', __name__, template_folder='templates',url_prefi
 
 @pasajero.route('/register',methods=['GET','POST'])
 def register():
-    current_equipaje = Equipaje.query.first()
-    id_equipaje = current_equipaje.id
+    return render_template('views/pasajero/register.html')
+
+@pasajero.route('/', methods=['GET','POST'])
+def store():
+    current_equipaje = Equipaje.query.order_by(Equipaje.id.desc()).first()
+    if current_equipaje:
+        equipaje_id = current_equipaje.id
+    else:
+        equipaje_id = None
     if request.method == 'POST':
-        return redirect(url_for('pasajero.register'))
+        ci= request.form['ci']
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        telefono = request.form['telefono']
+        correo = request.form['correo']
+        pasajero = Pasajero(ci,nombre,apellido,telefono,correo,equipaje_id)
+        db.session.add(pasajero)
+        db.session.commit()
+    
+    return redirect(url_for('vuelo.register'))
     
    
 
