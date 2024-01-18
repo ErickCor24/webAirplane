@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="vista form-data">
-  <form action="/registro_pasajero" method="POST">
+  <form action="{{ url_for('boleto.registro')}}" method="POST">
     <div class="form-row">
       <div class="column">
         <h2>Datos personales</h2>

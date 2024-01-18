@@ -1,8 +1,7 @@
 {% extends 'layout.html' %} 
 {% block content %}
-<section class="form-data2">
     <div>
-        <h2>Administrar cliente</h2>
+        <h1> Administrar cliente </h1>
       <table border="1" class="table_vuelo">
         <thead>
           <tr>
@@ -11,31 +10,30 @@
             <th>Apellido</th>
             <th>Correo</th>
             <th>Telefono</th>
-            <th>Acciones</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
           </tr>
         </thead>
         <tbody>         
             {%for cliente in dataCliente%}
             {%if cliente.5 == '1'%}                      
             <tr>
-              <td>
-                {{cliente.0}}
+              <td>{{cliente.0}}</td>
+              <td>{{cliente.1}}</td>
+              <td>{{cliente.2}}</td>
+              <td>{{cliente.3}}
+              </td><td>{{cliente.4}}
               </td>
               <td>
-                {{cliente.1}}
+              <div class="row-button">
+                <a class="editar" href="/client/editCliente/{{cliente.0}}" >Editar</a>    
+              </div>        
               </td>
               <td>
-                {{cliente.2}}
-              </td>
-              <td>
-                {{cliente.3}}
-              </td>
-              <td>
-                {{cliente.4}}
-              </td>
-              <td>
-                <a class="editar" href="/client/editCliente/{{cliente.0}}">Editar</a>
-                <a class="borrar" href="/client/deleteClient/{{cliente.0}}">Elimimar</a>
+                <div class="row-button">
+                  <a class="borrar" href="/client/deleteClient/{{cliente.0}}" >Eliminar</a>
+                </div>        
+                
               </td>
             </tr>
             {% endif %}
@@ -45,5 +43,4 @@
         
       </table>
     </div>
-  </section>
 {% endblock %}

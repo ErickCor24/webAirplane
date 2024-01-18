@@ -11,6 +11,7 @@ def clienteVer():
     dataCliente = cursor.fetchall()
     print(dataCliente)
     cursor.close()
+    conexion.close()
     return render_template('client/accion_cliente.html',dataCliente=dataCliente)
 
 @client_page.route("/editClient")
@@ -21,7 +22,6 @@ def clienteEditDelete():
 def clienteDelete(idCliente):
     conexion=dbConnect()
     cursor = conexion.cursor()
-    print(idCliente)
     cursor.execute("UPDATE TB_CLIENTE SET ESTADO = '0' WHERE idCiCliente = :idCliente ",idCliente = idCliente)
     conexion.commit()
     conexion.close()
@@ -33,6 +33,7 @@ def clienteEdit(idCliente):
     cursor = conexion.cursor()
     cursor.execute("SELECT * FROM TB_CLIENTE WHERE idCiCliente = :idCliente ",idCliente = idCliente)
     data = cursor.fetchall()
+    conexion.close()
     return render_template('client/edit_cliente.html', data=data)
 
 @client_page.route("/update_client/<idCliente>", methods = ['GET','POST'])
@@ -83,8 +84,5 @@ def registroCliente():
         return redirect(url_for('index'))  
 
 
-@client_page.route("/facturas")
-def factura():
-    return render_template('factura/factura_selection.html')
 
 

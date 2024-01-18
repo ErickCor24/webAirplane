@@ -1,7 +1,7 @@
 {% extends 'layout.html' %} 
 {% block content %}
 
-<form action="/registro_pago" method="POST" class="form-data">
+<form action="{{ url_for('boleto.registroPago')}}" method="POST" class="form-data">
   <h1>Metodo de pago</h1>
   <div class="form-row">
     <div class="column">

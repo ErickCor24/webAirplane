@@ -1,7 +1,7 @@
 {% extends 'layout.html' %} 
 {% block content %}
 
-<form action="/registro_vuelo" class="form-data" method="POST">
+<form action="{{ url_for('vuelo.registroVuelo')}}" class="form-data" method="POST">
   <h1>Creación de vuelos</h1>
   <div class="form-row">
     <div class="column">
@@ -30,7 +30,7 @@
     </div>
   </div>
   <div class="content-button">
-    <button class="btn-registe" type="submit">Register</button>
+    <button class="btn-register" type="submit">Register</button>
   </div>
 </form>
 
