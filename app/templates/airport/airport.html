@@ -1,0 +1,28 @@
+{%extends 'layout.html'%}
+{% block content %}
+<div class="vista form-data">
+    <form action="">
+        <div class="column">
+            <h2>Aeropuerto y Avion</h2>
+            <label for="nombre">aeropuerto</label>
+            <select name="aeropuerto" id="aeropuerto">
+                <option value="">seleccione una opcion</option>
+                {%for aeropuerto in aeropuertos%}
+                <option value="{{aeropuerto.id}}">{{aeropuerto.nombre}}</option>
+                {%endfor%}
+            </select>
+    
+            <label for="ci">Avion</label>
+            <select name="avion" id="avion">
+                <option value="">seleccione una opcion</option>
+                {%for avion in aviones%}
+                <option value="{{avion.id}}">{{avion.marca}}</option>
+                {%endfor%}
+            </select>
+        </div>
+        <div class="content-button">
+            <a href="{{url_for('pasajero.register')}}">siguiente</a>
+        </div>
+    </form>
+</div>
+{%endblock%}
