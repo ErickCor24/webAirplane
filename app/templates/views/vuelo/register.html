@@ -1,28 +1,28 @@
 {% extends 'layout.html' %} 
 {% block content %}
 
-<form action="/registro_vuelo" class="form-data" method="POST">
+<form action="{{url_for('vuelo.store')}}" class="form-data" method="post">
   <h1>Creación de vuelos</h1>
   <div class="form-row">
     <div class="column">
-      <label for="fechaSalida">Fecha Salida</label>
-      <input type="date" name="fechaSalida" required="true" />
+      <label for="fecha_salida">Fecha Salida</label>
+      <input type="date" name="fecha_salida" id="fecha_salida" required="true" />
     </div>
     <div class="column">
-      <label for="horaLlegada">Hora Salida</label>
-      <input type="time" name="horaSalida" required="true" />
+      <label for="hora_salida">Hora Salida</label>
+      <input type="time" name="hora_salida" id="hora_salida" required="true" />
     </div>
   </div>
   <div class="form-row">
     <div class="column">
       <label for="precio">Precio</label>
-      <input type="text" name="precio" class="small-input" required="true" />
+      <input type="text" name="precio" class="small-input" id="precio" required="true" />
     </div>
   </div>
   <div class="form-row">
     <div class="column">
-      <label for="avionAsignado">Avión asignado</label>
-      <select name="avionAsignado" id="avionAsignado">
+      <label for="avion_asignado">Avión asignado</label>
+      <select name="avion_asignado" id="avion_asignado">
         <option value="">seleccione una opcion</option>
         {% for avion in aviones %}
         <option value="{{avion.id}}">{{avion.marca}}</option>
@@ -30,8 +30,8 @@
       </select>
     </div>
     <div class="column">
-      <label for="aeropuertoDestino">Aeropuerto Destino</label>
-      <select name="aeropuertoDestino" id="aeropuertoDestino">
+      <label for="aeropuerto_destino">Aeropuerto Destino</label>
+      <select name="aeropuerto_destino" id="aeropuerto_destino">
         <option value="">seleccione una opcion</option>
         {% for aeropuerto in aeropuertos %}
         <option value="{{aeropuerto.id}}">{{aeropuerto.nombre}}</option>
@@ -40,7 +40,7 @@
     </div>
   </div>
   <div class="content-button">
-    <a href="{{url_for('boleto.register')}}">siguiente</a>
+    <button type="submit" class="button">siguiente</button>
   </div>
 </form>
 
