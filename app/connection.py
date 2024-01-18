@@ -1,5 +1,5 @@
-import cx_Oracle
 
+import cx_Oracle
 def dbConnect():
     try:
         connect = cx_Oracle.connect(
