@@ -12,23 +12,27 @@
               <th>CI</th>
               <th>Apellido</th>
               <th>Nombre</th>
-              <th>Id Vuelo</th>
+              <!-- <th>Id Vuelo</th> -->
               <th>Qty Maletas</th>
               <th>Peso Equipaje</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
+            {%for pasajero in pasajeros%}
+            <tr>
+              <td>{{pasajero.ci}}</td>
+              <td>{{pasajero.apellido}}</td>
+              <td>{{pasajero.nombre}}</td>
+              <!-- <td>{{pasajero.id_vuelo}}</td> -->
+              <td>{{pasajero.cantidadMaletas}}</td>
+              <td>{{pasajero.pesoEquipaje}}</td>
+              <td>
                 <a href="/editPasajero">Editar</a>
                 <a href="/deletePasajero">Elimimar</a>
               </td>
+            </tr>
+            {%endfor%}
           </tbody>
         </table>
         
