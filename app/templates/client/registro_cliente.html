@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="vista form-data">
-  <form action="/registro_cliente" method="POST">
+  <form action="{{ url_for('cliente.registroCliente')}}" method="POST">
     <div class="form-row">
       <div class="column">
         <h2>Registro Clientes</h2>

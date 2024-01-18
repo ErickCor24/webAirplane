@@ -1,14 +1,21 @@
-from flask import Blueprint,render_template,redirect,url_for
+from flask import Blueprint,render_template,redirect,url_for,request
 from models.aeropuerto import Aeropuerto
 from models.avion import Avion
+from models.equipaje import Equipaje
 from utils.db import db
+from models.pasajero import Pasajero
 
 pasajero = Blueprint('pasajero', __name__, template_folder='templates',url_prefix='/pasajero')
 
 
-@pasajero.route('/register')
+@pasajero.route('/register',methods=['GET','POST'])
 def register():
-    return render_template('views/pasajero/register.html')
+    current_equipaje = Equipaje.query.first()
+    id_equipaje = current_equipaje.id
+    if request.method == 'POST':
+        return redirect(url_for('pasajero.register'))
+    
+   
 
 
 

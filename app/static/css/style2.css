@@ -203,6 +203,52 @@ body {
         background-color: #ffffff;
     }
 
+    
+    .row-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-top: 10px; 
+      }
+    
+      .column-button {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    
+      .editar {
+        text-decoration: none;
+        background-color: #4CAF50; 
+        color: white;
+        padding: 10px;
+        margin-bottom: 5px; 
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    
+      .editar:hover {
+        background-color: #45a049; 
+      }
+    
+      .borrar {
+        text-decoration: none;
+        background-color: #FF0000; 
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    
+      .borrar:hover {
+        background-color: #cc0000; 
+      }
+
+
+
+
     .entradatexto2{
         display: inline;
         width: 50%;
