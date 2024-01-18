@@ -5,7 +5,17 @@ vuelo_page = Blueprint ("vuelo",__name__, template_folder="templates", url_prefi
 
 @vuelo_page.route('/vuelo')
 def vuelo():
-    return render_template('flight/crear_vuelo.html')
+    conexion = dbConnect()
+    cursor = conexion.cursor()
+    cursor.execute("SELECT * FROM TB_AVION")
+    aviones = cursor.fetchall()
+    cursor.close()
+    cursor3 = conexion.cursor()
+    cursor3.execute("SELECT * FROM TB_AEROPUERTO")
+    aeropuertos = cursor3.fetchall()
+    cursor3.close()
+
+    return render_template('flight/crear_vuelo.html', aviones = aviones, aeropuertos = aeropuertos)
 
 @vuelo_page.route('/registro_vuelo', methods = ['GET','POST'])
 def registroVuelo():
@@ -46,8 +56,21 @@ def editarVuelo(idVuelo):
     cursor = conexion.cursor()
     cursor.execute("SELECT * FROM TB_VUELO WHERE idVuelo = :idVuelo ",idVuelo = idVuelo)
     datos = cursor.fetchall()
+    cursor.close()
+
+
+    cursor2 = conexion.cursor()
+    cursor2.execute("SELECT * FROM TB_AVION")
+    aviones = cursor2.fetchall()
+    cursor2.close()
+
+    cursor3 = conexion.cursor()
+    cursor3.execute("SELECT * FROM TB_AEROPUERTO")
+    aeropuertos = cursor3.fetchall()
+    cursor3.close()
     conexion.close()
-    return render_template('flight/editarVuelo.html', data=datos)
+
+    return render_template('flight/editarVuelo.html', data=datos, aviones = aviones, aeropuertos = aeropuertos)
 
 @vuelo_page.route("/update_vuelo/<idVuelo>", methods = ['GET','POST'])
 def vueloUpdate(idVuelo):

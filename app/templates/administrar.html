@@ -1,32 +1,32 @@
 {% extends 'layout.html' %} 
 {% block content %}
 
-<div class="welcome-screen">
-    <h2 class="welcome-message">Administrador de base de datos e informacion </h2>
+<div class="adminscreen">
+    <h2 class="adminmessage">Administrador de base de datos e informacion </h2>
 </div>
 <div>
-    <label>Administrar Clientes</label>
+    <label class="labelAdmin">Administrar Clientes</label>
     <a class="btn-admini" href="/client/cliente_ver"> ➤ </a>
 </div>
 <div>
-    <label>Administrar Vuelos</label>
+    <label class="labelAdmin">Administrar Vuelos</label>
     <a class="btn-admini" href="/flight/ver_vuelo"> ➤ </a>
 </div>
 <div>
-    <label>Administrar Factura </label>
+    <label class="labelAdmin">Administrar Factura </label>
     <a class="btn-admini" href="/factura/ver_factura"> ➤ </a>
 </div>
 <div>
-    <label>Administrar Aviones y Aeropuertos </label>
+    <label class="labelAdmin">Administrar Aviones y Aeropuertos </label>
     <a class="btn-admini" href="/airport_plane/verVuelos"> ➤ </a>
 </div>
 <div>
-    <label>Administrar Pasajeros - Equipaje </label>
+    <label class="labelAdmin">Administrar Pasajeros - Equipaje </label>
     <a class="btn-admini" href="/passenger/all"> ➤ </a>
 </div>
 <div>
-    <label>Administrar Pasajeros DONT PRESS </label>
-    <a class="btn-admini" href="https://www.youtube.com/watch?v=iIO9poJzoxs"> ➤ </a>
+    <label class="labelAdmin">Administrar Boletos </label>
+    <a class="btn-admini" href="/ticket_passenger/boleto_ver"> ➤ </a>
 </div>
 
 {% endblock %}

@@ -58,7 +58,6 @@ def seleccion():
     cursor = conexion.cursor()
     cursor.execute("SELECT * FROM TB_VUELO ")
     dataVuelo = cursor.fetchall()
-    print(dataVuelo)
     cursor.close()
     
     cursor2 = conexion.cursor()
@@ -74,8 +73,6 @@ def boleto_ver():
     cursor = conexion.cursor()
     cursor.execute("SELECT * FROM TB_BOLETO ")
     dataBoleto = cursor.fetchall()
-    print(dataBoleto)
-    print(dataBoleto)
     cursor.close()
     conexion.close()
     return render_template('ticket/boleto_selection.html',dataBoleto=dataBoleto)

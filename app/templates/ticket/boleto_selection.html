@@ -1,44 +1,27 @@
-{% extends 'layout.html' %}
-{% block content %}
+{% extends 'layout.html' %} {% block content %}
 <div>
-    <h1>Administrar boleto</h1>
-    <table border="1" class="table_vuelo">
-        <thead>
-            <tr>
-                <th>ID Boleto</th>
-                <th>Clase</th>
-                <th>ID Pasajero</th>
-                <th>ID Vuelo</th>
-                <th>Estado</th>
-                <th>Editar</th>
-                <th>Eliminar</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            {% for boleto in dataBoleto %}
-            {% if boleto.4 == '1' %}
-            <tr>
-                <td>{{ boleto.0 }}</td>
-                <td>{{ boleto.1 }}</td>
-                <td>{{ boleto.2 }}</td>
-                <td>{{ boleto.3 }}</td>
-                <td>{{ boleto.4 }}</td>
-                <td>
-                    <div class="row-button">
-                      <a class="editar" href="#" >Editar</a>    
-                    </div>        
-                    </td>
-                    <td>
-                      <div class="row-button">
-                        <a class="borrar" href="#" >Eliminar</a>
-                      </div>        
-                      
-                    </td>
-            </tr>
-            {% endif %}
-            {% endfor %}
-        </tbody>
-    </table>
+  <h1>Administrar boleto</h1>
+  <table border="1" class="table_vuelo">
+    <thead>
+      <tr>
+        <th>ID Boleto</th>
+        <th>Clase</th>
+        <th>ID Pasajero</th>
+        <th>ID Vuelo</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for boleto in dataBoleto %} {% if boleto.3 == '1' %}
+      <tr>
+        <td>{{ boleto.0 }}</td>
+        <td>{{ boleto.1 }}</td>
+        <td>{{ boleto.2 }}</td>
+        <td>{{ boleto.3 }}</td>
+        <td>{{ boleto.4 }}</td>
+      </tr>
+      {% endif %} {% endfor %}
+    </tbody>
+  </table>
 </div>
 {% endblock %}

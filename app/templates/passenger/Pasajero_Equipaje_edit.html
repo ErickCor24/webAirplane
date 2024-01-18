@@ -1,49 +1,46 @@
-{%extends 'layout.html'%}
-
-{%block content%}
+{%extends 'layout.html'%} {%block content%} {%for info in pasajero%}
 <div class="vista form-data">
-    <form action="{{}}" method="POST">
-      <div class="form-row">
-        <div class="column">
-          <h2>{{pasajero.idPasajero}}</h2>
-          <label for="nombre">Nombre:</label>
-          <input type="text" name="nombre" id="nombre"  value="{{pasajero.nombre}}" />
-  
-          <label for="ci">Cédula de identidad:</label>
-          <input type="text" name="ci" id="ci" value="{{pasajero.ci}}"  />
-  
-          <label for="telefono">Teléfono:</label>
-          <input type="tel" name="telefono" id="telefono"  value="{{pasajero.telefono}}"/>
-        </div>
-  
-        <div class="column">
-          <h2>&nbsp;</h2>
-          <label for="apellido">Apellido:</label>
-          <input type="text" name="apellido" id="apellido"  value="{{pasajero.apellido}}"/>
-  
-          <label for="correo">Correo electrónico:</label>
-          <input type="email" name="correo" id="correo"  value="{{pasajero.correo}}"/>
-        </div>
+  <form action="{{ url_for('passenger.update', idPasajero=info.0, idEquipaje = info.7) }}" method="POST">
+    <div class="form-row">
+      <div class="column">
+        <h2>Editar Pasajer: {{info.0}}</h2>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" value="{{info.2}}" />
+
+        <label for="ci">Cédula de identidad:</label>
+        <input type="text" name="ci" id="ci" value="{{info.1}}" />
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" name="telefono" id="telefono" value="{{info.5}}" />
       </div>
-  
-      <div class="form-row">
-        <div class="column">
-          <h2>Equipaje</h2>
-          <label for="CantMaletas">Cantidad de Maletas:</label>
-          <input type="number" name="CantMaletas" id="CantMaletas" required />
-        </div>
-  
-        <div class="column">
-          <h2>&nbsp;</h2>
-          <label for="Peso">Peso:</label>
-          <input type="number" name="Peso" id="Peso" placeholder="Libras" required
-          />
-        </div>
+
+      <div class="column">
+        <h2>&nbsp;</h2>
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" id="apellido" value="{{info.3}}" />
+
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" name="correo" id="correo" value="{{info.4}}" />
       </div>
-  
-      <div class="content-button">
-        <input type="submit" class="btn-register" value="Registrar" />
+    </div>
+
+    <div class="form-row">
+      <div class="column">
+        <h2>Equipaje</h2>
+        <label for="CantMaletas">Cantidad de Maletas:</label>
+        <input type="number" name="CantMaletas" id="CantMaletas" value="{{info.9}}" required />
       </div>
-    </form>
-  </div>
-{%endblock%}
+
+      <div class="column">
+        <h2>&nbsp;</h2>
+        <label for="Peso">Peso:</label>
+        <input type="number" name="Peso" id="Peso" placeholder="Libras" value="{{info.10}}" required/>
+      </div>
+    </div>
+
+    <div class="content-button">
+      <input type="submit" class="btn-register" value="Registrar" />
+    </div>
+  </form>
+</div>
+{%endfor%}{%endblock%}

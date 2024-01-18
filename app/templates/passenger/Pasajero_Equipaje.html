@@ -15,23 +15,32 @@
               <!-- <th>Id Vuelo</th> -->
               <th>Qty Maletas</th>
               <th>Peso Equipaje</th>
-              <th>Acciones</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
             </tr>
           </thead>
           <tbody>
             {%for pasajero in pasajeros%}
+            {%if pasajero.6 == '1'%}
             <tr>
-              <td>{{pasajero.ci}}</td>
-              <td>{{pasajero.apellido}}</td>
-              <td>{{pasajero.nombre}}</td>
+              <td>{{pasajero.1}}</td>
+              <td>{{pasajero.3}}</td>
+              <td>{{pasajero.2}}</td>
               <!-- <td>{{pasajero.id_vuelo}}</td> -->
-              <td>{{pasajero.cantidadMaletas}}</td>
-              <td>{{pasajero.pesoEquipaje}}</td>
+              <td>{{pasajero.9}} Maletas</td>
+              <td>{{pasajero.10}} libras</td>
               <td>
-                <a href="{{url_for('passenger.edit',id=pasajero.idPasajero)}}">Editar</a>
-                <a href="{{url_for('passenger.delete,id=pasajero.idPasajero')}}">Elimimar</a>
+                <div class="row-button">
+                <a class="editar" href="/passenger/edit/{{pasajero.0}}">Editar</a>
+              </div>
+              </td>
+              <td>
+                <div class="row-button"></div>
+                <a class="borrar" href="/passenger/delete/{{pasajero.0}}">Eliminar</a>
+              </div>
               </td>
             </tr>
+            {%endif%}
             {%endfor%}
           </tbody>
         </table>

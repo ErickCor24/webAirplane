@@ -22,11 +22,21 @@
   <div class="form-row">
     <div class="column">
       <label for="avionAsignado">Avión asignado</label>
-      <input type="text" name="avionAsignado" required="true" />
+      <select name="avionAsignado" id="avion">
+        <option value="">seleccione una opcion</option>
+        {%for avion in aviones%}
+        <option value="{{avion.0}}">{{avion.2}}</option>
+        {%endfor%}
+    </select>
     </div>
     <div class="column">
       <label for="aeropuertoDestino">Aeropuerto Destino</label>
-      <input type="text" name="aeropuertoDestino" required="true" />
+      <select name="aeropuertoDestino" id="aeropuerto">
+        <option value="">seleccione una opcion</option>
+        {%for aeropuerto in aeropuertos%}
+        <option value="{{aeropuerto.0}}">{{aeropuerto.1}}</option>
+        {%endfor%}
+    </select>
     </div>
   </div>
   <div class="content-button">

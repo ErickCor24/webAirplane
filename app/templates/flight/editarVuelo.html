@@ -1,39 +1,60 @@
-{% extends 'layout.html' %} 
-{% block content %}
-{% for info in data %}
-<form action="{{ url_for('vuelo.vueloUpdate', idVuelo=info.0)}}" class="form-data" method="POST">
-  <h1>Editar vuelo ID: {{info.0}} </h1>
-  
+{% extends 'layout.html' %} {% block content %} {% for info in data %}
+<form
+  action="{{ url_for('vuelo.vueloUpdate', idVuelo=info.0)}}"
+  class="form-data"
+  method="POST"
+>
+  <h1>Editar vuelo ID: {{info.0}}</h1>
+
   <div class="form-row">
     <div class="column">
       <label for="fechaSalida">Fecha Salida</label>
-      <input type="date" name="fechaSalida" required="true" value="{{info.1.strftime('%Y-%m-%d')}}" />
+      <input
+        type="date"
+        name="fechaSalida"
+        required="true"
+        value="{{info.1.strftime('%Y-%m-%d')}}"
+      />
     </div>
     <div class="column">
       <label for="horaSalida">Hora Salida</label>
-      <input type="time" name="horaSalida" required="true" value="{{info.2}}"/>
+      <input type="time" name="horaSalida" required="true" value="{{info.2}}" />
     </div>
   </div>
   <div class="form-row">
     <div class="column">
       <label for="precio">Precio</label>
-      <input type="text" name="precio" class="small-input" required="true" value="{{info.3}}"/>
+      <input
+        type="text"
+        name="precio"
+        class="small-input"
+        required="true"
+        value="{{info.3}}"
+      />
     </div>
   </div>
   <div class="form-row">
     <div class="column">
       <label for="avionAsignado">Avión asignado</label>
-      <input type="text" name="avionAsignado" required="true" value="{{info.6}}"/>
+      <select name="avionAsignado" id="avion">
+        <option value="">seleccione una opcion</option>
+        {%for avion in aviones%}
+        <option value="{{avion.0}}">{{avion.0}} - {{avion.2}}</option>
+        {%endfor%}
+      </select>
     </div>
     <div class="column">
       <label for="aeropuertoDestino">Aeropuerto Destino</label>
-      <input type="text" name="aeropuertoDestino" required="true" value="{{info.5}}"/>
+      <select name="aeropuertoDestino" id="aeropuerto">
+        <option value="">seleccione una opcion</option>
+        {%for aeropuerto in aeropuertos%}
+        <option value="{{aeropuerto.0}}">{{aeropuerto.1}}</option>
+        {%endfor%}
+      </select>
     </div>
   </div>
   <div class="content-button">
     <button class="btn-register" type="submit">Actualizar</button>
   </div>
-
 </form>
-{%endfor%}
-{% endblock %}
+{%endfor%} {% endblock %}
