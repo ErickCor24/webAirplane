@@ -28,8 +28,8 @@
               <td>{{pasajero.cantidadMaletas}}</td>
               <td>{{pasajero.pesoEquipaje}}</td>
               <td>
-                <a href="/editPasajero">Editar</a>
-                <a href="/deletePasajero">Elimimar</a>
+                <a href="{{url_for('passenger.edit',id=pasajero.idPasajero)}}">Editar</a>
+                <a href="{{url_for('passenger.delete,id=pasajero.idPasajero')}}">Elimimar</a>
               </td>
             </tr>
             {%endfor%}

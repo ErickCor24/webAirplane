@@ -1,0 +1,49 @@
+{%extends 'layout.html'%}
+
+{%block content%}
+<div class="vista form-data">
+    <form action="{{}}" method="POST">
+      <div class="form-row">
+        <div class="column">
+          <h2>{{pasajero.idPasajero}}</h2>
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" id="nombre"  value="{{pasajero.nombre}}" />
+  
+          <label for="ci">Cédula de identidad:</label>
+          <input type="text" name="ci" id="ci" value="{{pasajero.ci}}"  />
+  
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" name="telefono" id="telefono"  value="{{pasajero.telefono}}"/>
+        </div>
+  
+        <div class="column">
+          <h2>&nbsp;</h2>
+          <label for="apellido">Apellido:</label>
+          <input type="text" name="apellido" id="apellido"  value="{{pasajero.apellido}}"/>
+  
+          <label for="correo">Correo electrónico:</label>
+          <input type="email" name="correo" id="correo"  value="{{pasajero.correo}}"/>
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="column">
+          <h2>Equipaje</h2>
+          <label for="CantMaletas">Cantidad de Maletas:</label>
+          <input type="number" name="CantMaletas" id="CantMaletas" required />
+        </div>
+  
+        <div class="column">
+          <h2>&nbsp;</h2>
+          <label for="Peso">Peso:</label>
+          <input type="number" name="Peso" id="Peso" placeholder="Libras" required
+          />
+        </div>
+      </div>
+  
+      <div class="content-button">
+        <input type="submit" class="btn-register" value="Registrar" />
+      </div>
+    </form>
+  </div>
+{%endblock%}
