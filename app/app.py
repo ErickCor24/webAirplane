@@ -4,6 +4,8 @@ from client import client_page
 from flight import vuelo_page
 from boletPassengerFlight import boleto_page
 from factura import factura_page
+from airpotPlane import airpor_plane_page
+from passenger import passenger
 
 app = Flask (__name__)
 
@@ -11,6 +13,8 @@ app.register_blueprint(client_page)
 app.register_blueprint(vuelo_page)
 app.register_blueprint(boleto_page)
 app.register_blueprint(factura_page)
+app.register_blueprint(airpor_plane_page)
+app.register_blueprint(passenger)
 
 rtnPasajero = None
 vueloId = None

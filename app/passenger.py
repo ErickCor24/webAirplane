@@ -2,11 +2,7 @@ from flask import Blueprint,render_template,redirect,url_for,request,flash
 
 from connection import dbConnect
 
-
-
-
 passenger = Blueprint("passenger",__name__,template_folder="templates",url_prefix="/passenger")
-
 
 @passenger.route("/all")
 def all():

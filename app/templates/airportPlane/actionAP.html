@@ -1,0 +1,56 @@
+{% extends 'layout.html' %} 
+{% block content %}
+
+<div>
+    <h1>Administrar Aviones - Aeropertos</h1>
+    <h2>Aviones</h2>
+  <table border="1" class="table_vuelo">
+    <thead>
+      <tr>
+        <th>IdAvion</th>
+        <th>Capacidad</th>
+        <th>Marca</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        {%for data in dataAvion%}
+        <tr>
+          <td>{{data.0}}</td>
+          <td>{{data.1}} Pasajeros</td>
+          <td>{{data.2}}</td>
+        </tr>  
+       {%endfor%}
+    </tbody>
+  </table>
+  <h2>Aeropuertos y destinos asociados</h2>
+  <table border="1" class="table_vuelo">
+    <thead>
+      <tr>
+        <th>IdAropuerto</th>
+        <th>Nombre</th>
+        <th>Ciudad</th>
+        <th>Pais</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        {%for dataA in dataAeropuerto%}
+        <tr>
+          <td>{{dataA.0}}</td>
+          <td>{{dataA.1}}</td>
+          <td>{{dataA.2}}</td>
+          <td>{{dataA.3}}</td>
+          <!-- <td>             
+            <div class="row-button">
+                <div class="column-button">
+                    <a href="/factura/eliminar_factura" class="borrar">Borrar</a>
+                  </div>
+            </div>
+        </td> -->
+        </tr>  
+        {%endfor%}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
