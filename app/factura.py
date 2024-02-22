@@ -34,5 +34,3 @@ def deleteFactura (idFactura):
     except:
         return redirect(url_for('error'))
         
-
-    
