@@ -5,51 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> AIRLINE SECUS </title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide"> 
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"> 
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style2.css')}}"> 
-
-
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">    
+    
 </head>
 <body>
-    <div class="container">
-        <header class="nav">
-            <div class="line">
-                <section class="left" >
-                    <a href="/">AIRLINE SECUS</a>  
-                </section>    
-                <section class="right">
-                    <a href="#">Usuario</a>
-                </section>
-                        
-            </div>      
-        </header> 
-        <div class="PanelBotones">
-            <section>
-                <a class="boton" href="/client/cliente"> Cliente </button>     
-                <a class="boton" href="/flight/vuelo"> Vuelo </button>
-                <a class="boton" href="/ticket_passenger/registro">Boleto</a>
-            </section>      
-        </div> 
-
-
-        <div class = "vista">
-            <div>
-                {% block content %}
-                
-                {% endblock %}
-            </div>
-            
-        </div>
-        <a class="boton" href="/administration">Administrar</a>
-    </div>    
-    
-        <footer>
-            <div class="PiePagina">
-                <p>&copy; 2024 - Todos los derechos reservados.</p>
-                <p> SOFT MAT 4-1</p>
-                <p> Base de Datos</p>
-            </div>
-        </footer>
-    
+    <header class="nav">
+        <a class="nav-element" href="/">AIRLINE SECUS</a>  
+        <a class="nav-element" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+            </svg> User </a>
+    </header> 
+    <main>
+        <section class="PanelBotones">
+            <a class="botonPanel" href="/client/cliente"> Client </button>     
+            <a class="botonPanel" href="/flight/vuelo"> Flight </button>
+            <a class="botonPanel" href="/ticket_passenger/registro">Ticket</a>
+        </section>            
+            <section class="container">
+                {% block content %}               
+                {% endblock %}    
+            </section>             
+            <a class="botonAdmin" href="/administration">Administrar</a>
+    </main>
+    <footer class="PiePagina">
+        <p>&copy; 2024 - All rights reserved.</p>
+        <p> SOFT MAT 4-1</p>
+    </footer> 
 </body>
 </html>

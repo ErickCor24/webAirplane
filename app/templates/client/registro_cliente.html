@@ -1,32 +1,39 @@
-{% extends 'layout.html' %} 
+{% extends 'layout.html' %}
 {% block content %}
 
-<div class="vista form-data">
-  <form action="{{ url_for('cliente.registroCliente')}}" method="POST">
+<h2 class="tittle">Client Registration</h2>
+<div class="register-screen">
+  <form action="{{ url_for('cliente.registroCliente')}}" method="POST"> 
     <div class="form-row">
-      <div class="column">
-        <h2>Registro Clientes</h2>
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" id="nombre" required />
-
-        <label for="ci">CI:</label>
-        <input type="text" name="ci" id="ci" required />
-
-        <label for="telefono">Teléfono:</label>
-        <input type="tel" name="telefono" id="telefono" required />
+      <div class="contain">
+        <div class="input">
+          <label for="nombre">Name:</label>
+          <input type="text" name="nombre" id="nombre" required />
+        </div>
+        <div class="input">
+          <label for="apellido">Last Name:</label>
+          <input type="text" name="apellido" id="apellido" required />
+        </div>
       </div>
-
-      <div class="column">
-        <h2>&nbsp;</h2>
-        <label for="apellido">Apellido:</label>
-        <input type="text" name="apellido" id="apellido" required />
-
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" name="correo" id="correo" required />
+      <div class="contain">
+        <div class="input">
+          <label for="ci">CI:</label>
+          <input type="text" name="ci" id="ci" required />
+        </div>
+        <div class="input">
+          <label for="telefono">Phone:</label>
+          <input type="tel" name="telefono" id="telefono" required />
+        </div>
+      </div>
+      <div class="contain">
+        <div class="input">
+          <label for="correo">E-mail:</label>
+          <input type="email" name="correo" id="correo" required />
+        </div>
       </div>
     </div>
     <div class="content-button">
-      <button class="btn-register" type="submit">Registrar</button>
+      <button class="btn-register" type="submit">Register</button>
     </div>
   </form>
 </div>

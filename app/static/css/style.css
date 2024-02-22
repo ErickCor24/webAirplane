@@ -1,219 +1,190 @@
     body {
-    font-family: Verdana, sans-serif;
-    background-color: #e8e8e8;
-    margin: 0;
-    
+        font-family: Verdana, sans-serif;
+        background-image: url("./image/flight2.jpg") ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        background-blend-mode: lighten;
+        margin: 0;
+        color: #000000;
     }
-    .container {
-        flex-direction: column;
-        min-height: 100vh;
-    }
+
     .nav {
-        background-color: #10004f;
-        color: white;
+        display: flex;
         width: auto;
-        margin: 0 auto;
-        padding:25px 20px 55px 20px;
-        border-width: 1px;
-        /*border-radius: 0px;
-        border-style: solid;*/
+        background-color: #183D3D;
+        padding:30px 20px 30px 20px;
         box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
         margin-bottom: 25px;
-    }
-
-    .nav a {
-        color: white;
-        text-decoration: none;
-    }
-
-    .nav a:hover {
-        text-decoration: none;
-    }
-
-    .vista {           
-        background-color: #FBFBFF;
-        border-color: #ffffff;
-    }
-
-    .vista {
-        display: flex;
-        width: 85%;
-        margin: 0 auto;
-        background-color: #ffffff;
-        flex-direction: column;
-        padding:15px 10px 15px 10px;
-        border-width: 5px;
-        border-radius: 5px;
-        border-style: solid;
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-        margin-bottom: 25px;
-    }
-    .line{
-        display: block;
-    }
-    .left{
-        float: left;   
-        font-size: 25px; font-family: Audiowide, sans-serif;   
-    }
-
-    .right{
-        float: right;       
-    }
-
-    .PanelBotones {
-        display:block ;
-        width: 30%;
-        color: white;
-        background-color: #ffffff;
-        margin: 0 auto;
-        padding:15px 10px 15px 10px;
-        border-width: 5px;
-        border-radius: 5px;
-        border-style: solid;
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-        margin-bottom: 25px;
-        text-align: center;
-    }
-    .boton {
-        background-color: #4CAF50;
-        border: none;
-        color: white;
-        padding: 8px 15px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 5px;
-        display: inline-block;
-    }
-
-    /*AQUI PONGO EL FORM CSS */
-    .form-data {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .form-row{
-        display: flex;
         justify-content: space-between;
-        margin-bottom: 16px;
     }
-    .column {
-        flex: 1;
-        margin-right: 10px;
+
+    .nav-element {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
     }
-    
-    .column:last-child {
-        margin-right: 0;
+
+    .nav-element:hover {
+        color: #eadeff;
+
     }
-   
-    label {
-        display: block;
-        margin-bottom: 8px;
-    }
-    
-    input {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 16px;
-        box-sizing: border-box;
-        border-radius: 5px;
-        border: 2px solid #ccc;
-    }
-    
-    label{
-        font-weight: bold;
-        color: #10004f;
+
+    .welcome-screen {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
         
     }
-    
-    input:focus {
-        outline: none;
-        border: 2px solid #4CAF50;
-    }
 
-    select {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 16px;
-        box-sizing: border-box;
-        border-radius: 5px;
-        border: 2px solid #ccc;
-    }
-
-
-    select:focus {
-        outline: none;
-        border: 2px solid #4CAF50;
-    }
-    
-    .small-input {
-        width: 30%; 
-    }
-
-    .content-button {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
+    .welcome-message {
+        color: #333;
+        font-size: 36px;
+        display: block;     
+        width: 250px;
+        margin: 15px;
         text-align: center;
-        margin-top: 20px;
     }
-    
-    
-    
-    .btn-register {
-        padding: 10px 20px;
-        font-size: 16px; 
-        background-color: #4CAF50; 
-        color: #fff; 
-        border: none; 
-        border-radius: 5px; 
-        cursor: pointer; 
-        transition: background-color 0.3s ease; 
-    }
-    
-    .btn-register:hover {
-        background-color: #57cf5b;
-    }
-    
-    footer {
 
-        background-color: #000000;
-        color: white;
-        padding: 20px;
+    .text-message {
+        color: #1b1b1b;
+        font-size: 21px;
+        display: block;      
+        width: 500px;
+        margin: 15px;
         text-align: center;
-        margin-top: auto;
-    }
+    }     
 
-    .PiePagina{
-        display: flex; flex-direction: column;
-    }
-
-    .form-data {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .form-row {
+    .PanelBotones{
         display: flex;
-        justify-content: space-between;
-        margin-bottom: 16px;
+        color: white;
+        width: 450px;
+        margin: 0 auto;
+        padding: 15px;
+        justify-content: center;
+        background-color: #fefefe;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        margin-bottom: 25px;
+    }
+
+    .botonPanel{
+        text-decoration: none;
+        width: 80px;
+        margin: 2px 20px;
+        text-align: center;
+        cursor: pointer;
+        background-color: #eb413b;
+        padding: 10px;
+        color: #000000;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 10px 0px;
+        transition: background-color 0.2s ease;
+    }
+   
+    .botonPanel:hover{
+        background-color: #dba134;
+    }
+
+    .container {
+        background-color: #fefefe;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        width: 1080px;
+        margin: 0 auto;
+        padding: 15px;
+        margin-bottom: 25px;
+    }
+
+    .botonAdmin{
+        text-decoration: none;
+        width: 80px;
+        margin: 2px 20px;
+        text-align: center;
+        cursor: pointer;
+        background-color: #eb413b;
+        padding: 10px;
+        color: #000000;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 10px 0px;
+        transition: background-color 0.2s ease;
+    }
+
+    .botonAdmin:hover{
+        background-color: #dba134;
+    }
+
+    .contain{
+        display: flex;
+        margin: 25px;
+        justify-content: flex-start;
     }
     
-    .column {
-        flex: 1;
-        margin-right: 10px;
+    .input input{
+        margin: 0px 25px 0px 0px;
+        border-radius: 2px;
+        border: 2px solid #ccc;
+        appearance: none;
+        background-color: white;
+        padding: 5px 10px;
     }
+
+    .input label{
+        margin: 0px 0px 0px 10px;      
+    }
+
+    .register-screen {
+        display: flex;
+        justify-content: center;    
+    }
+
+    .tittle{
+        width: 350px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .content-button{
+        display: flex;
+        justify-content: center;        
+    }
+
+    .btn-register{
+        background-color: #ffffff;
+        width: 80px;
+        margin: 2px 20px;
+        padding: 10px;
+        color: #eb413b;
+        border-color: #eb413b ;
+        border-style: double;
+        border-radius: 10px 0px;
+        transition: background-color 0.2s ease, border-color 0.4s ease, color 0.3s ease, border-radius 0.2s ease-in-out;
+    }
+
+    .btn-register:hover{
+        background-color: #eb413b;
+        border-color: #ffffff ;
+        color: #ffffff;
+        border-radius: 0px 10px;
+    }
+
+    footer {
+        display: flex;
+        background-color: #040d12;
+        color: white;
+        padding: 5px;
+        text-align: center;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        justify-content:space-between;
+    }
+
+    footer p{
+        display: block;
+        padding: 0 150px 0 50px;
+    }
+
     
-    .column:last-child {
-        margin-right: 0;
-    }

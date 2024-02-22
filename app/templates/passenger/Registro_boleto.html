@@ -1,46 +1,53 @@
 {% extends 'layout.html' %} 
 {% block content %}
 
-<div class="vista form-data">
+<div class="register-screen">
   <form action="{{ url_for('boleto.registro')}}" method="POST">
     <div class="form-row">
-      <div class="column">
-        <h2>Datos personales</h2>
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" id="nombre" required />
 
-        <label for="ci">Cédula de identidad:</label>
-        <input type="text" name="ci" id="ci" required />
-
-        <label for="telefono">Teléfono:</label>
-        <input type="tel" name="telefono" id="telefono" required />
+      <h2 class="tittle">Datos personales</h2>
+      <div class="contain">
+        <div class="input">
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" id="nombre" required />
+        </div>
+        <div class="input">
+          <label for="apellido">Apellido:</label>
+          <input type="text" name="apellido" id="apellido" required />
+        </div>
       </div>
 
-      <div class="column">
-        <h2>&nbsp;</h2>
-        <label for="apellido">Apellido:</label>
-        <input type="text" name="apellido" id="apellido" required />
+      <div class="contain">
+        <div class="input">
+          <label for="ci">Cédula de identidad:</label>
+          <input type="text" name="ci" id="ci" required />
+        </div>
+        <div class="input">
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" name="telefono" id="telefono" required />
+        </div>
+      </div>
+      
+      <div class="contain">
+        <div class="input">
+          <label for="correo">Correo electrónico:</label>
+          <input type="email" name="correo" id="correo" required />
+        </div>
+      </div>
+      
+      <h2 class="tittle">Equipaje</h2>
 
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" name="correo" id="correo" required />
+      <div class="contain">
+        <div class="input">
+          <label for="CantMaletas">Cantidad de Maletas:</label>
+          <input type="number" name="CantMaletas" id="CantMaletas" required />
+        </div>
+        <div class="input">
+          <label for="Peso">Peso:</label>
+          <input type="number" name="Peso" id="Peso" placeholder="Libras" required/>
+        </div>
       </div>
     </div>
-
-    <div class="form-row">
-      <div class="column">
-        <h2>Equipaje</h2>
-        <label for="CantMaletas">Cantidad de Maletas:</label>
-        <input type="number" name="CantMaletas" id="CantMaletas" required />
-      </div>
-
-      <div class="column">
-        <h2>&nbsp;</h2>
-        <label for="Peso">Peso:</label>
-        <input type="number" name="Peso" id="Peso" placeholder="Libras" required
-        />
-      </div>
-    </div>
-
     <div class="content-button">
       <input type="submit" class="btn-register" value="Registrar" />
     </div>

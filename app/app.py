@@ -30,6 +30,11 @@ def index():
 def administration():
     return render_template('administrar.html')
 
+@app.route("/error")
+def error():
+    return render_template('error.html')
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

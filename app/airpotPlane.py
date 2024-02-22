@@ -5,16 +5,19 @@ airpor_plane_page = Blueprint ("aeropuetoAvion",__name__, template_folder="templ
 
 @airpor_plane_page.route('/verVuelos')
 def verVuelos():
-    conexion = dbConnect()
-    cursor = conexion.cursor()
-    cursor.execute("SELECT * FROM TB_AVION")
-    dataAvion = cursor.fetchall()
+    try:
+        conexion = dbConnect()
+        cursor = conexion.cursor()
+        cursor.execute("SELECT * FROM TB_AVION")
+        dataAvion = cursor.fetchall()
 
-    cursor2 = conexion.cursor()
-    cursor2.execute("SELECT * FROM TB_AEROPUERTO")
-    dataAeropuerto = cursor2.fetchall()
-    
-    print (dataAvion)
-    print (dataAeropuerto)
+        cursor2 = conexion.cursor()
+        cursor2.execute("SELECT * FROM TB_AEROPUERTO")
+        dataAeropuerto = cursor2.fetchall()
+        
+        print (dataAvion)
+        print (dataAeropuerto)
 
-    return render_template('airportPlane/actionAP.html',dataAvion = dataAvion, dataAeropuerto = dataAeropuerto)
+        return render_template('airportPlane/actionAP.html',dataAvion = dataAvion, dataAeropuerto = dataAeropuerto)
+    except:
+        return redirect(url_for('error'))
