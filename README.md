@@ -1,4 +1,4 @@
-Crear su entorno virtual para poder añadir las dependencias o librerias utilizadas en el proyecto
+<h1> Crear su entorno virtual para poder añadir las dependencias o librerias utilizadas en el proyecto </h1>
 
 1. Abriremos el terminal con CTRL + SHIFT + Ñ o desde la opcion Terminal "New terminal"
 2. pip install virtualenv
